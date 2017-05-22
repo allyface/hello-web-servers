@@ -1,0 +1,22 @@
+{
+  "name": "hello-web-servers",
+  "version": "1.0.0",
+  "description": "## Introduction",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allyface/hello-web-servers.git"
+  },
+  "author": "Ally Kendall",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allyface/hello-web-servers/issues"
+  },
+  "homepage": "https://github.com/allyface/hello-web-servers#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}

@@ -2,9 +2,10 @@
   "name": "hello-web-servers",
   "version": "1.0.0",
   "description": "## Introduction",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,8 @@
   "homepage": "https://github.com/allyface/hello-web-servers#readme",
   "dependencies": {
     "ejs": "^2.5.6",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7"
   }
 }

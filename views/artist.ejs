@@ -2,17 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Music Player :: Artist :: ARTIST NAME</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Music Player :: Artist :: <%= name %></title>
   </head>
   <body>
     <div>
       <%- include('partials/navbar') %>
     </div>
-    <h1>ARTIST NAME</h1>
-    <ul>
-      <li>Art Tatum Something</li>
-      <li>Another Album by this dude</li>
-      <li>A third</li>
-    </ul>
+    <h1><%= name %></h1>
+    <h2><%= genre %></h2>
+    <% albums.forEach((album) => { %>
+      <% if (album.artist_id === id) { %>
+        <a href="/albums/<%= album.id %>">
+          <p><%= album.title %></p>
+        </a>
+        <p><%= album.year %></p>
+      <% } %>
+    <% }) %>
   </body>
 </html>

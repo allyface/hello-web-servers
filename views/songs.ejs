@@ -7,8 +7,8 @@
     <title>Music Player :: Songs</title>
   </head>
   <body>
-    <div class="navbar">
-      <%- include('partials/navbar') %>
+    <div class="header">
+      <%- include('layout/header') %>
     </div>
     <div class="container page-content">
       <div class="page-heading row">
@@ -20,37 +20,7 @@
         <h5 class="col s3">Album</h5>
         <h5 class="col s1">Length</h5>
       </div>
-      <% songs.forEach((song) => { %>
-        <div class="divider"></div>
-        <div class="row section songs-item">
-          <div class="col s5 song-title">
-            <p><%= song.title %></p>
-          </div>
-          <div class="col s3 songs-artist">
-            <% for(let i = 0; i < artists.length; i++) { %>
-              <% for(let j=0; j < albums.length; j++) { %>
-                <% if (artists[i].id === albums[j].artist_id && albums[j].id === song.album_id) { %>
-                  <p><%= artists[i].name %></p>
-                <% } %>
-              <% } %>
-            <% } %>
-          </div>
-          <div class="col s3 songs-album">
-            <% for(let i = 0; i < albums.length; i++) { %>
-              <% if (albums[i].id === song.album_id) { %>
-                <p><%= albums[i].title %></p>
-              <% } %>
-            <% } %>
-          </div>
-          <div class="col s1 songs-length">
-            <% let mins = Math.floor(song.length / 60) %>
-            <% mins = mins < 10 ? '0' + mins : mins %>
-            <% let secs = song.length % 60 %>
-            <% secs = secs < 10 ? '0' + secs: secs %>
-            <p><%= mins %>:<%= secs %></p>
-          </div>
-        </div>
-      <% }) %>
+      <%- include('songs/list_item') %>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   </body>

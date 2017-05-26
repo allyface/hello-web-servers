@@ -1,0 +1,16 @@
+<% songs.forEach((song) => { %>
+  <% if (song.album_id === id) { %>
+    <div class="divider"></div>
+    <div class="row section album-songs-item">
+      <p>
+        <span class="col s2 track-number"><%= song.track_no %></span>
+        <span class="col s5 album-artist"><%= song.title %></span>
+        <% let mins = Math.floor(song.length / 60) %>
+        <% mins = mins < 10 ? '0' + mins : mins %>
+        <% let secs = song.length % 60 %>
+        <% secs = secs < 10 ? '0' + secs: secs %>
+        <span class="col s1 song-length"><%= mins %>:<%= secs %></span>
+      </p>
+    <% } %>
+  </div>
+<% }) %>

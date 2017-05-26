@@ -1,0 +1,29 @@
+<% albums.forEach((album) => { %>
+  <div class="divider"></div>
+  <div class="row section albums-item">
+    <div class="col s4 offset-s1 album-image">
+      <img src="<%= album.image %>" alt="<%= album.title %>" height="200" class="circle responsive-img">
+    </div>
+    <div class="col s4 offset-s2 album-info">
+      <a href="/albums/<%= album.id %>">
+        <h3><%= album.title %></h3>
+      </a>
+        <p>Artist:
+          <a href="/artists/<%= album.artist_id %>">
+            <% for(let i = 0; i < artists.length; i++) {%>
+              <% if(artists[i].id === album.artist_id) {%>
+              <span> <%= artists[i].name %></span>
+              <% } %>
+            <% } %>
+          </a>
+        </p>
+      <% let songCount = 0 %>
+      <% for (let i = 0; i < songs.length; i++) { %>
+        <% if (songs[i].album_id === album.id) { %>
+          <% songCount ++ %>
+        <% } %>
+      <% } %>
+      <p><%= songCount %> Songs</p>
+    </div>
+  </div>
+<% }) %>

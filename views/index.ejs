@@ -3,20 +3,39 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <title>Music Player</title>
   </head>
   <body>
-    <div>
+    <div class="navbar">
       <%- include('partials/navbar') %>
     </div>
-    <div>
-      <h1>Artists</h1>
+    <div class="container page-content">
+      <div class="page-heading row">
+        <h1 class="col s6">Artists</h1>
+      </div>
       <% artists.forEach((artist) => { %>
-        <a href="/artists/<%= artist.id %>">
-          <p><%= artist.name %></p>
-        </a>
-          <p>Genre: <%= artist.genre %></p>
+        <div class="divider"></div>
+        <div class="row section artists-item">
+          <div class="col s4 offset-s1 artist-image">
+            <img src="<%= artist.image %>" alt="<%= artist.name %>" height="200" class="circle responsive-img">
+          </div>
+          <div class="col s4 offset-s2 artist-info">
+            <a href="/artists/<%= artist.id %>">
+              <h3><%= artist.name %></h3>
+            </a>
+            <% let count = 0 %>
+            <% for (let i = 0; i < albums.length; i++) { %>
+              <% if (albums[i].artist_id === artist.id) { %>
+                <% count++ %>
+              <% } %>
+            <% } %>
+            <p>Albums: <%= count %></p>
+            <p>Genre: <%= artist.genre %></p>
+          </div>
+        </div>
       <% }) %>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   </body>
 </html>

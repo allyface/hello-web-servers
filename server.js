@@ -9,15 +9,18 @@ app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
+
   res.render('index', {
-    artists: artists
+    artists: artists,
+    albums: albums
   })
 })
 
 app.get('/albums', (req, res) => {
   res.render('albums', {
     albums: albums,
-    artists: artists
+    artists: artists,
+    songs: songs
   })
 })
 
@@ -33,15 +36,14 @@ app.get('/artists/:artist_id', (req, res) => {
   const artist = artists.filter((artist) => {
     return artist.id == req.params.artist_id
   })[0]
-// console.log(req)
-  console.log('artist', artist);
-  console.log('url', req.url);
+
   res.render('artist', {
     albums: albums,
     songs: songs,
     id: artist.id,
     name: artist.name,
-    genre: artist.genre
+    genre: artist.genre,
+    image: artist.image
   })
 })
 
@@ -56,7 +58,8 @@ app.get('/albums/:album_id', (req, res) => {
     id: album.id,
     artist: album.artist_id,
     title: album.title,
-    year: album.year
+    year: album.year,
+    image: album.image
   })
 })
 

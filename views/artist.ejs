@@ -3,21 +3,58 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <title>Music Player :: Artist :: <%= name %></title>
   </head>
   <body>
-    <div>
+    <div class="navbar">
       <%- include('partials/navbar') %>
     </div>
-    <h1><%= name %></h1>
-    <h2><%= genre %></h2>
+    <div class="container page-content">
+      <div class="page-heading row">
+        <div class="artist-artist-info col s4">
+          <h1><%= name %></h1>
+          <% let albumCount = 0 %>
+          <% for (let i = 0; i < albums.length; i++) { %>
+            <% if (albums[i].artist_id === id) { %>
+              <% albumCount++ %>
+            <% } %>
+          <% } %>
+          <h4>
+            <span>Albums: <%= albumCount %></span>
+            <span>Genre: <%= genre %></span>
+          </h4>
+        </div>
+        <div class="artist-image col s4 offset-s4">
+          <img src="<%= image %>" alt="<%= name %>" height="200" class="circle responsive-img">
+        </div>
+      </div>
+    </div>
     <% albums.forEach((album) => { %>
       <% if (album.artist_id === id) { %>
-        <a href="/albums/<%= album.id %>">
-          <p><%= album.title %></p>
-        </a>
-        <p><%= album.year %></p>
-      <% } %>
+        <div class="divider"></div>
+        <div class="row section albums-item">
+          <div class="col s4 offset-s1 album-image">
+            <img src="<%= album.image %>" alt="<%= album.title %>" height="200" class="circle responsive-img">
+          </div>
+          <div class="col s4 offset-s2 album-info">
+            <a href="/albums/<%= album.id %>">
+              <h3><%= album.title %></h3>
+            </a>
+            <p class="row">
+              <span class="col s4">Year: <%= album.year %></span>
+              <% let songCount = 0 %>
+              <% for (let j = 0; j < songs.length; j++) { %>
+                <% if (songs[j].album_id === album.id) { %>
+                  <% songCount++ %>
+                <% } %>
+              <% } %>
+              <span class="col s4"><%= songCount %> Songs</span>
+            </p>
+          </div>
+        <% } %>
+      </div>
     <% }) %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   </body>
 </html>

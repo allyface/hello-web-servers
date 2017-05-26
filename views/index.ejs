@@ -7,34 +7,14 @@
     <title>Music Player</title>
   </head>
   <body>
-    <div class="navbar">
-      <%- include('partials/navbar') %>
+    <div class="header">
+      <%- include('layout/header') %>
     </div>
     <div class="container page-content">
       <div class="page-heading row">
         <h1 class="col s6">Artists</h1>
       </div>
-      <% artists.forEach((artist) => { %>
-        <div class="divider"></div>
-        <div class="row section artists-item">
-          <div class="col s4 offset-s1 artist-image">
-            <img src="<%= artist.image %>" alt="<%= artist.name %>" height="200" class="circle responsive-img">
-          </div>
-          <div class="col s4 offset-s2 artist-info">
-            <a href="/artists/<%= artist.id %>">
-              <h3><%= artist.name %></h3>
-            </a>
-            <% let count = 0 %>
-            <% for (let i = 0; i < albums.length; i++) { %>
-              <% if (albums[i].artist_id === artist.id) { %>
-                <% count++ %>
-              <% } %>
-            <% } %>
-            <p>Albums: <%= count %></p>
-            <p>Genre: <%= artist.genre %></p>
-          </div>
-        </div>
-      <% }) %>
+      <%- include('artists/list_item') %>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   </body>

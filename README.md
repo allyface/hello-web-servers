@@ -120,21 +120,21 @@ At this point, you don't need to actually _show_ any real data, just render HTML
 - [x] View template files are created in the `/views` subdirectory
 - [x] Main view file is called `views/index.ejs`
 - [x] Main view is rendered at route `/`
-- [ ] Main view shows a list of all artists (see [wireframe](#wireframes))
+- [x] Main view shows a list of all artists (see [wireframe](#wireframes))
 - [x] Albums view file is called `views/albums.ejs`
 - [x] Albums view is rendered at route `/albums`
-- [ ] Albums view shows a list of all albums (see [wireframe](#wireframes))
+- [x] Albums view shows a list of all albums (see [wireframe](#wireframes))
 - [x] Songs view file is called `views/songs.ejs`
 - [x] Songs view is rendered at route `/songs`
-- [ ] Songs view shows a list of all songs (see [wireframe](#wireframes))
+- [x] Songs view shows a list of all songs (see [wireframe](#wireframes))
 - [x] Individual artist view file is called `views/artist.ejs`
 - [x] Individual artist view is rendered at route `/artists/:artist_id`
-- [ ] Individual artist view shows a list of the artist's songs (see [wireframe](#wireframes))
+- [x] Individual artist view shows a list of the artist's songs (see [wireframe](#wireframes))
 - [x] Individual album view file is called `views/album.ejs`
 - [x] Individual album view is rendered at route `/albums/:album_id`
-- [ ] Individual album view shows a list of the album's songs (see [wireframe](#wireframes))
-- [ ] CSS is organized into one or more files in the `public/` directory
-- [ ] CSS declarations are well-named and formatted (consider using this [small guide](http://tinystride.com/articles/organized-css-a-small-guide/))
+- [x] Individual album view shows a list of the album's songs (see [wireframe](#wireframes))
+- [x] CSS is organized into one or more files in the `public/` directory
+- [x] CSS declarations are well-named and formatted (consider using this [small guide](http://tinystride.com/articles/organized-css-a-small-guide/))
 
 #### Stage 3
 
@@ -142,59 +142,59 @@ Integrate a "fake database" by rendering static data sets of artists, albums, an
 
 Use the [fake data set](#fake-data) provided.
 
-- [ ] Main view (`/`) shows all artists from the [fake artists data](#fake-data).
-- [ ] Main view shows artist name and genre.
-- [ ] Artist name on main view links to the artist view (`/artists/:artist_id`).
-- [ ] Album list view (`/albums`) shows all albums from the [fake album data](#fake-data).
-- [ ] Album list view shows the name of the artist for each album.
-- [ ] Album name on album list view links to the album view (`/albums/:album_id`).
-- [ ] Artist name on album list view links to the artist view (`/artists/:artist_id`).
-- [ ] Song list view (`/songs`) shows all songs from the [fake song data](#fake-data).
-- [ ] Song list view shows song title, artist, album, and song length in seconds.
-- [ ] Artist view (`/artists/:artist_id`) shows all albums for the artists with id `:artist_id` from the [fake artist data](#fake-data).
+- [x] Main view (`/`) shows all artists from the [fake artists data](#fake-data).
+- [x] Main view shows artist name and genre.
+- [x] Artist name on main view links to the artist view (`/artists/:artist_id`).
+- [x] Album list view (`/albums`) shows all albums from the [fake album data](#fake-data).
+- [x] Album list view shows the name of the artist for each album.
+- [x] Album name on album list view links to the album view (`/albums/:album_id`).
+- [x] Artist name on album list view links to the artist view (`/artists/:artist_id`).
+- [x] Song list view (`/songs`) shows all songs from the [fake song data](#fake-data).
+- [x] Song list view shows song title, artist, album, and song length in seconds.
+- [x] Artist view (`/artists/:artist_id`) shows all albums for the artists with id `:artist_id` from the [fake artist data](#fake-data).
     **Hint:** you can [filter][array-filter] the albums by their `artist_id` property.
-- [ ] Artist view shows artist name and genre.
-- [ ] Artist view shows each album title and year released.
-- [ ] Album names on artist view links to the album view (`/albums/:album_id`).
-- [ ] Album view (`/albums/:album_id`) shows all albums from the [fake album data](#fake-data).
+- [x] Artist view shows artist name and genre.
+- [x] Artist view shows each album title and year released.
+- [x] Album names on artist view links to the album view (`/albums/:album_id`).
+- [x] Album view (`/albums/:album_id`) shows all albums from the [fake album data](#fake-data).
     **Hint:** you can [filter][array-filter] the songs by their `album_id` property.
-- [ ] Album view shows album title, artist name, and year released.
-- [ ] Album view each song title, its track number, and length in seconds.
-- [ ] Artist name on album view links to the artist view (`/artists/:artist_id`).
+- [x] Album view shows album title, artist name, and year released.
+- [x] Album view each song title, its track number, and length in seconds.
+- [x] Artist name on album view links to the artist view (`/artists/:artist_id`).
 
 #### Stage 4
 
 Improve the views by adding _summary_ data (e.g. song count for album), parsing the song length into minutes and seconds, showing actual album artwork and artist profile images, and integrating a CSS framework to make it prettier.
 
-- [ ] Main view (`/`) shows an album count for each artist.
-- [ ] Album list view (`/albums`) shows a song count for each album.
-- [ ] Artist view (`/artists/:artist_id`) shows an album count for the artist.
-- [ ] Artist view (`/artists/:artist_id`) shows a song count for each album.
-- [ ] Album view (`/albums/:album_id`) shows a song count for the album.
-- [ ] On all views that show song length, the length is shown in `mm:ss` format.
+- [x] Main view (`/`) shows an album count for each artist.
+- [x] Album list view (`/albums`) shows a song count for each album.
+- [x] Artist view (`/artists/:artist_id`) shows an album count for the artist.
+- [x] Artist view (`/artists/:artist_id`) shows a song count for each album.
+- [x] Album view (`/albums/:album_id`) shows a song count for the album.
+- [x] On all views that show song length, the length is shown in `mm:ss` format.
     For example, if the song has a length of 286 seconds, then it would be shown as `04:46` (286 seconds = 4 minutes, 46 seconds).
-- [ ] Actual album images are used instead of placeholders on albums list (`/albums`), artist (`/artists/:artist_id`), and album (`/albums/:album_id`) views.
+- [x] Actual album images are used instead of placeholders on albums list (`/albums`), artist (`/artists/:artist_id`), and album (`/albums/:album_id`) views.
     **Hint:** once you find an image (Google image search is a good place for this), you can add the URL to the `albums.json` fake data file.
-- [ ] Actual artist profile images are used instead of placeholders on main view (`/`) and artist view (`/artists/:artist_id`).
+- [x] Actual artist profile images are used instead of placeholders on main view (`/`) and artist view (`/artists/:artist_id`).
     **Hint:** once you find an image (Google image search is a good place for this), you can add the URL to the `artists.json` fake data file.
-- [ ] App uses a CSS framework like [Twitter bootstrap][bootstrap] or Yahoo's [Pure.css][pure-css].
+- [x] App uses a CSS framework like [Twitter bootstrap][bootstrap] or Yahoo's [Pure.css][pure-css].
 
 #### Stage 5
 
 Refactor and improve the organization of your code. Use EJS's "includes" feature to better organize the different components of your views.
 
-- [ ] All views use an include for the header nav (with links to "Artists", "Albums" and "Songs").
-- [ ] Header nav include is kept in the file `views/layout/header.ejs`.
-- [ ] Main view (`/`) uses an _artist list item_ include for each artist.
-- [ ] Artists list item include is kept in the file `views/artists/list_item.ejs`.
-- [ ] Albums list view (`/albums`) uses an _album list item_ include for each album.
-- [ ] Albums list item include is kept in the file `views/albums/list_item.ejs`.
-- [ ] Songs list view (`/songs`) uses a _song list item_ include for each song.
-- [ ] Songs list item include is kept in the file `views/songs/list_item.ejs`.
-- [ ] Artist view (`/artists/:artist_id`) uses an _artist album_ include for each album.
-- [ ] Artist album include is kept in the file `views/artists/album.ejs`.
-- [ ] Album view (`/albums/:album_id`) uses an _album song_ for each album.
-- [ ] Album song include is kept in the file `views/albums/song.ejs`.
+- [x] All views use an include for the header nav (with links to "Artists", "Albums" and "Songs").
+- [x] Header nav include is kept in the file `views/layout/header.ejs`.
+- [x] Main view (`/`) uses an _artist list item_ include for each artist.
+- [x] Artists list item include is kept in the file `views/artists/list_item.ejs`.
+- [x] Albums list view (`/albums`) uses an _album list item_ include for each album.
+- [x] Albums list item include is kept in the file `views/albums/list_item.ejs`.
+- [x] Songs list view (`/songs`) uses a _song list item_ include for each song.
+- [x] Songs list item include is kept in the file `views/songs/list_item.ejs`.
+- [x] Artist view (`/artists/:artist_id`) uses an _artist album_ include for each album.
+- [x] Artist album include is kept in the file `views/artists/album.ejs`.
+- [x] Album view (`/albums/:album_id`) uses an _album song_ for each album.
+- [x] Album song include is kept in the file `views/albums/song.ejs`.
 
 If you finish early, move into [stretch](#stretch) specs, or use the extra time to polish up your code.
 

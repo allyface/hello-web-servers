@@ -3,32 +3,61 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
     <title>Music Player :: Albums :: <%= title %></title>
   </head>
   <body>
-    <div>
+    <div class="navbar">
       <%- include('partials/navbar') %>
     </div>
-    <h1><%= title %></h1>
-    <% for(let i = 0; i < artists.length; i++) { %>
-      <% if (artists[i].id === artist) { %>
-          <a href="/artists/<%= artist %>">
-            <p><%= artists[i].name %></p>
-          </a>
-      <% } %>
-    <% } %>
-    <p><%= year %></p>
-    <ul>
+    <div class="container page-content">
+      <div class="page-heading row">
+        <div class="album-info col s4">
+          <h1><%= title %></h1>
+          <p class="row">
+            <% for(let i = 0; i < artists.length; i++) { %>
+              <% if (artists[i].id === artist) { %>
+                  <a href="/artists/<%= artist %>">
+                    <span class="col s4"><%= artists[i].name %></span>
+                  </a>
+              <% } %>
+            <% } %>
+            <span class="col s4"><%= year %></span>
+            <% let songCount = 0 %>
+            <% for (let j = 0; j < songs.length; j++) { %>
+              <% if (songs[j].album_id === id) { %>
+                <% songCount++ %>
+              <% } %>
+            <% } %>
+            <span class="col s4"><%= songCount %> Songs</span>
+          </p>
+        </div>
+        <div class="album-image col s4 offset-s4">
+          <img src="<%= image %>" alt="<%= title %>" height="200" class="circle responsive-img">
+        </div>
+      </div>
+      <div class="list-heading row">
+        <h5 class="col s2">Track No.</h5>
+        <h5 class="col s5">Artist</h5>
+        <h5 class="col s1">Length</h5>
+      </div>
       <% songs.forEach((song) => { %>
         <% if (song.album_id === id) { %>
-          <li>
-            <span><%= song.title %></span>
-            <span><%= song.track_no %></span>
-            <span><%= song.length %></span>
-          </li>
-        <% } %>
+          <div class="divider"></div>
+          <div class="row section album-songs-item">
+            <p>
+              <span class="col s2 track-number"><%= song.track_no %></span>
+              <span class="col s5 album-artist"><%= song.title %></span>
+              <% let mins = Math.floor(song.length / 60) %>
+              <% mins = mins < 10 ? '0' + mins : mins %>
+              <% let secs = song.length % 60 %>
+              <% secs = secs < 10 ? '0' + secs: secs %>
+              <span class="col s1 song-length"><%= mins %>:<%= secs %></span>
+            </p>
+          <% } %>
+        </div>
       <% }) %>
-    </ul>
-
+    </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   </body>
 </html>

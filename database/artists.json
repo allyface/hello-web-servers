@@ -1,9 +1,9 @@
 [
-  { "id": 1, "name": "D'Angelo", "genre": "Neo-Soul" },
-  { "id": 2, "name": "Horse Feathers", "genre": "Folk" },
-  { "id": 3, "name": "Lauryn Hill", "genre": "Hip Hop" },
-  { "id": 4, "name": "M.I.A.", "genre": "Hip Hop" },
-  { "id": 5, "name": "Radiohead", "genre": "Electronic Rock" },
-  { "id": 6, "name": "Santigold", "genre": "Alternative Hip Hop" },
-  { "id": 7, "name": "TV On The Radio", "genre": "Rock" }
+  { "id": 1, "name": "D'Angelo", "genre": "Neo-Soul", "image": "http://media.gq.com/photos/559300067cc23bc86424262c/3:2/w_880/dangelo-flag-02.jpg" },
+  { "id": 2, "name": "Horse Feathers", "genre": "Folk", "image": "https://pbs.twimg.com/profile_images/508024112384450561/kTebWLUQ.jpeg" },
+  { "id": 3, "name": "Lauryn Hill", "genre": "Hip Hop", "image": "http://saintheron.com/wp-content/uploads/2013/12/LaurynHill.jpeg" },
+  { "id": 4, "name": "M.I.A.", "genre": "Hip Hop", "image": "http://alwaysjudging.com/media/MIA-PLATFORMS-MP3-DOWNLOAD.jpg" },
+  { "id": 5, "name": "Radiohead", "genre": "Electronic Rock", "image": "http://images.virgula.uol.com.br/2016/10/radiohead.jpg" },
+  { "id": 6, "name": "Santigold", "genre": "Alternative Hip Hop", "image": "http://www.idolator.com/wp-content/uploads/sites/10/2016/02/santigold-2015-promo-620x413.jpg" },
+  { "id": 7, "name": "TV On The Radio", "genre": "Rock", "image": "http://thefader-res.cloudinary.com/images/w_1440,c_limit,f_auto,q_auto:best/iieqe71cpuxxd4fkinhs/tv-on-the-radio.jpg" }
 ]
